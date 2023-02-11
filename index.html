@@ -28,21 +28,19 @@
 		<img id="pumpkin" src="/assets/pumpkin.webp">
 		<script>
 var pumpkin = document.getElementById("pumpkin");
+
 givePumpkinCocaine();
 function givePumpkinCocaine()
 {
+	pumpkin.style.left = random(0, document.body.clientWidth);
+	pumpkin.style.bottom = random(0, document.body.clientHeight);
+	
 	requestAnimationFrame(givePumpkinCocaine);
-	
-	var w = document.body.clientWidth;
-	var h = document.body.clientHeight;
-	
-	pumpkin.style.left = random(0, w);
-	pumpkin.style.bottom = random(0, h);
-	
-	function random(min, max)
-	{
-		return Math.random() * (max - min) + min;
-	}
+}
+
+function random(min, max)
+{
+	return Math.random() * (max - min) + min;
 }
 
 getLatestBideo().then((url) => document.getElementById("latestBideo").src = url);
