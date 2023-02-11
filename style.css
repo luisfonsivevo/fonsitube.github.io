@@ -1,0 +1,49 @@
+@font-face
+{
+	font-family: ComicsansMS;
+	src: url("/assets/cs.ttf");
+}
+
+*
+{
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	font-family: ComicsansMS;
+}
+
+body
+{
+	background-image: url("/assets/fonsi.jpg");
+	overflow: hidden;
+}
+
+.header
+{
+	font-size: 2em;
+	margin: auto;
+	width: 100%;
+	font-style: italic;
+	font-weight: bold;
+	text-align: center;
+}
+
+.header img
+{
+	margin: auto;
+	object-fit: fill;
+	width: 100%;
+	height: 150px;	
+}
+
+p, h3, ul
+{
+	background-color: #FFFF0080;
+}
+
+#pumpkin
+{
+	width: 100px;
+	position: absolute;
+}

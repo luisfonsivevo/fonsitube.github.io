@@ -1,1 +1,48 @@
-die
+<html>
+	<head>
+		<title>FONSI™</title>
+		<link rel="stylesheet" href="/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	</head>
+	<body>
+		<div class="header">
+			<img src="/assets/header.gif">
+			<br>
+			<p>&ldquo;I sharted in my pantaloon&rdquo;</p>
+			<br>
+		</div>
+		<p>Welcome to my webzone. E-mail me if you want a pizza roll. Post a comment on this webzone if you want a pizza roll.</p>
+		<br>
+		<h3>these are winter boots</h3>
+		<ul>
+			<li><a href="https://youtube.com/fonsitm" target="_blank">YOUBOOB</a></li>
+			<li><a href="https:/twitter.com/fonsifromyt" target="_blank">TWIGGER</a></li>
+			<li><a href="https://instagram.com/fonsifromyt" target="_blank">INSTAPLUMP</a></li>
+			<li><a href="https://discord.com/invite/9phgXruNKA" target="_blank">DISKONK</a></li>
+			<li><a href="https://github.com/luisfonsivevo" target="_blank">GAGHUB</a></li>
+			<li><a href="mailto:jerbear3.14159@gmail.com" target="_blank">ELECTRONIC MEN</a></li>
+		</ul>
+		<img id="pumpkin" src="/assets/pumpkin.webp">
+		<script>
+var pumpkin = document.getElementById("pumpkin");
+dogay();
+function dogay()
+{
+	dogay = null;
+	requestAnimationFrame(arguments.callee);
+	
+	var w = document.body.clientWidth;
+	var h = document.body.clientHeight;
+	
+	pumpkin.style.left = random(0, w);
+	pumpkin.style.bottom = random(0, h);
+	
+	function random(min, max)
+	{
+		return Math.random() * (max - min) + min;
+	}
+}
+
+		</script>
+	</body>
+</html>
