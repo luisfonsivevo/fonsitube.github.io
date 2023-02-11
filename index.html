@@ -23,15 +23,15 @@
 			<li><a href="https://github.com/luisfonsivevo" target="_blank">GAGHUB</a></li>
 			<li><a href="mailto:jerbear3.14159@gmail.com" target="_blank">ELECTRONIC MEN</a></li>
 		</ul>
-		<iframe src="https://www.youtube.com/embed?max-results=1&controls=0&showinfo=0&rel=0&listType=user_uploads&list=fonsitm&autoplay=1&mute=1&origin=https://fonsi.tube" frameborder="0" allowfullscreen></iframe>
+		<iframe id="latestBideo"></iframe>
+
 		<img id="pumpkin" src="/assets/pumpkin.webp">
 		<script>
 var pumpkin = document.getElementById("pumpkin");
-dogay();
-function dogay()
+givePumpkinCocaine();
+function givePumpkinCocaine()
 {
-	dogay = null;
-	requestAnimationFrame(arguments.callee);
+	requestAnimationFrame(givePumpkinCocaine);
 	
 	var w = document.body.clientWidth;
 	var h = document.body.clientHeight;
@@ -45,6 +45,15 @@ function dogay()
 	}
 }
 
+getLatestBideo().then((url) => document.getElementById("latestBideo").src = url);
+async function getLatestBideo(channel = "UCytgfDk1BLvlSUpqIVZRypQ")
+{
+	var rssFeed = `https://www.youtube.com/feeds/videos.xml?channel_id=${channel}`;
+	var response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssFeed)}`);
+	var json = await response.json();
+	var youtubeID = json.items[0].guid.replace("yt:video:", "");
+	return `https://youtube.com/embed/${youtubeID}?autoplay=1&mute=1`;
+}
 		</script>
 	</body>
 </html>
