@@ -66,8 +66,8 @@ async function getLatestBideo(channel = "UCytgfDk1BLvlSUpqIVZRypQ")
 givePumpkinCocaine();
 function givePumpkinCocaine()
 {
-	pumpkin.style.left = randomFloat(0, document.body.clientWidth);
-	pumpkin.style.bottom = randomFloat(0, document.body.clientHeight);
+	pumpkin.style.left = randomFloat(0, document.body.clientWidth - pumpkin.width);
+	pumpkin.style.bottom = randomFloat(0, document.body.clientHeight - pumpkin.height);
 	
 	requestAnimationFrame(givePumpkinCocaine);
 }
