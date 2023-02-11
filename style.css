@@ -42,6 +42,11 @@ p, h3, ul
 	background-color: #FFFF0080;
 }
 
+#latestBideo
+{
+	width: 100%;
+}
+
 #pumpkin
 {
 	width: 100px;
