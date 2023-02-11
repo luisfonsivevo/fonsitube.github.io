@@ -60,14 +60,14 @@ async function getLatestBideo(channel = "UCytgfDk1BLvlSUpqIVZRypQ")
 	var response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssFeed)}`);
 	var json = await response.json();
 	var youtubeID = json.items[0].guid.replace("yt:video:", "");
-	return `https://youtube.com/embed/${youtubeID}?autoplay=1&mute=1`;
+	return `https://youtube.com/embed/${youtubeID}`;
 }
 
 givePumpkinCocaine();
 function givePumpkinCocaine()
 {
-	pumpkin.style.left = randomFloat(0, document.body.clientWidth - pumpkin.width);
-	pumpkin.style.bottom = randomFloat(0, document.body.clientHeight - pumpkin.height);
+	pumpkin.style.left = randomFloat(0, document.documentElement.scrollWidth - pumpkin.width);
+	pumpkin.style.top = randomFloat(0, document.documentElement.scrollHeight - pumpkin.height);
 	
 	requestAnimationFrame(givePumpkinCocaine);
 }
