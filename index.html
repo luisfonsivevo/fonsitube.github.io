@@ -9,7 +9,7 @@
 		<div class="header">
 			<img src="/assets/header.gif">
 			<br>
-			<p>&ldquo;I sharted in my pantaloon&rdquo;</p>
+			<p>&ldquo;<span id="headerText"></span>&rdquo;</p>
 			<br>
 		</div>
 		<p>Welcome to my webzone. E-mail me if you want a pizza roll. Post a comment on this webzone if you want a pizza roll.</p>
@@ -28,21 +28,27 @@
 		
 		<img id="pumpkin" src="/assets/pumpkin.webp">
 		<script>
+var headerText = document.getElementById("headerText");
 var pumpkin = document.getElementById("pumpkin");
 
-givePumpkinCocaine();
-function givePumpkinCocaine()
-{
-	pumpkin.style.left = random(0, document.body.clientWidth);
-	pumpkin.style.bottom = random(0, document.body.clientHeight);
-	
-	requestAnimationFrame(givePumpkinCocaine);
-}
+var headerTexts =
+[
+	"I sharted in my pantaloon",
+	"Chuck Norris farted and an earthquake started",
+	"Equate Alcohol Free Multi-Action Antiseptic Oral Rinse",
+	"Look for the Gummy Bear album in stores on November 13th",
+	"Everywhere I look I see Dorbees",
+	"Eventually everyone runs out of time",
+	"I can be square or a rectangle, or I can lean over at an angle",
+	"They call my dick the Idaho Spud",
+	"He's thicc",
+	"My name Jeff",
+	"Life is full of disappointments, for some people",
+	"I'm very hungry",
+	"Big Chungus"
+]
 
-function random(min, max)
-{
-	return Math.random() * (max - min) + min;
-}
+headerText.innerText = headerTexts[randomInt(0, headerTexts.length - 1)];
 
 getLatestBideo().then((url) => document.getElementById("latestBideo").src = url);
 async function getLatestBideo(channel = "UCytgfDk1BLvlSUpqIVZRypQ")
@@ -52,6 +58,27 @@ async function getLatestBideo(channel = "UCytgfDk1BLvlSUpqIVZRypQ")
 	var json = await response.json();
 	var youtubeID = json.items[0].guid.replace("yt:video:", "");
 	return `https://youtube.com/embed/${youtubeID}?autoplay=1&mute=1`;
+}
+
+givePumpkinCocaine();
+function givePumpkinCocaine()
+{
+	pumpkin.style.left = randomFloat(0, document.body.clientWidth);
+	pumpkin.style.bottom = randomFloat(0, document.body.clientHeight);
+	
+	requestAnimationFrame(givePumpkinCocaine);
+}
+
+//min inclusive, max exclusive
+function randomFloat(min, max)
+{
+	return Math.random() * (max - min) + min;
+}
+
+//min+max inclusive
+function randomInt(min, max)
+{
+	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 		</script>
 	</body>
